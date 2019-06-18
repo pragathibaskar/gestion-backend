@@ -8,7 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
-
+import com.devonfw.application.tptf.centrotarifamanagement.dataaccess.api.CentroTarifaEntity;
+import com.devonfw.application.tptf.parametrotarifamanagement.dataaccess.api.ParametroTarifaEntity;
 import com.devonfw.application.tptf.tipotarifamanagement.dataaccess.api.TipoTarifaEntity;
 import com.devonfw.application.tptf.tipotarifamanagement.logic.api.to.TipoTarifaEto;
 import com.devonfw.application.tptf.tipotarifamanagement.logic.api.usecase.UcManageTipoTarifa;
