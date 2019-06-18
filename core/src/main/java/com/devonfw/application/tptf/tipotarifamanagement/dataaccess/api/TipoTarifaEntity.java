@@ -93,7 +93,7 @@ public class TipoTarifaEntity extends ApplicationPersistenceEntity implements Ti
   /**
    * @return parametros
    */
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipodeTarifa")
+  @OneToMany(mappedBy = "tipodeTarifa", fetch = FetchType.EAGER)
   @Fetch(FetchMode.SUBSELECT)
   public List<ParametroTarifaEntity> getParametros() {
 
