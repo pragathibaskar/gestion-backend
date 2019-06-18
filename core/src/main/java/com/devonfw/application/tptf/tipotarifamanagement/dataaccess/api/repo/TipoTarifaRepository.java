@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.Modifying;
 
 import com.devonfw.application.tptf.tipotarifamanagement.dataaccess.api.TipoTarifaEntity;
 import com.devonfw.application.tptf.tipotarifamanagement.logic.api.to.TipoTarifaSearchCriteriaTo;
@@ -139,5 +140,13 @@ public interface TipoTarifaRepository extends DefaultRepository<TipoTarifaEntity
 
   @Query("SELECT t.id FROM TipoTarifaEntity t WHERE t.porDefecto=true")
   public Long makeDefault();
+  
+  @Modifying
+  @Query("DELETE from CentroTarifaEntity c where c.id=:id")
+  public void deleteCentro(@Param("id") long id);
+  
+  @Modifying
+  @Query("DELETE from ParametroTarifaEntity c where c.id=:id1")
+  public void deleteParam(@Param("id1") long id1);
 
 }
