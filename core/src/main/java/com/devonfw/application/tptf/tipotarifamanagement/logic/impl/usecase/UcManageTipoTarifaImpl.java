@@ -31,6 +31,15 @@ public class UcManageTipoTarifaImpl extends AbstractTipoTarifaUc implements UcMa
   public boolean deleteTipoTarifa(long tipoTarifaId) {
 
     TipoTarifaEntity tipoTarifa = getTipoTarifaRepository().find(tipoTarifaId);
+    List<CentroTarifaEntity> centrotarifa = tipoTarifa.getCentrotarifa();
+    centrotarifa.forEach(centroentity -> {
+      getTipoTarifaRepository().deleteCentro(centroentity.getId());
+    });
+    List<ParametroTarifaEntity> parametros = tipoTarifa.getParametros();
+    parametros.forEach(paramentity -> {
+      getTipoTarifaRepository().deleteParam(paramentity.getId());
+    });
+
     getTipoTarifaRepository().delete(tipoTarifa);
     LOG.debug("The tipoTarifa with id '{}' has been deleted.", tipoTarifaId);
     return true;
