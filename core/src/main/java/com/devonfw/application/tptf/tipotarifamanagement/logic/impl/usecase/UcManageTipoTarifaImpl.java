@@ -3,7 +3,7 @@ package com.devonfw.application.tptf.tipotarifamanagement.logic.impl.usecase;
 import java.util.Objects;
 
 import javax.inject.Named;
-
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
