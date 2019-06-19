@@ -151,5 +151,10 @@ public interface CentroTarifaRepository extends DefaultRepository<CentroTarifaEn
   @Query("SELECT COALESCE(MIN(c.fechaDesdeVigencia),0) FROM CentroTarifaEntity c inner join c.centros m WHERE m.centro=:centro AND c.fechaDesdeVigencia>:fechaDesdeVigencia")
   public BigDecimal getFechafin(@Param("centro") BigInteger centro,
       @Param("fechaDesdeVigencia") BigDecimal fechaDesdeVigencia);
+  
+  @Query("SELECT c FROM CentroTarifaEntity c inner join c.tipotarifa t inner join t.parametros p inner join c.centros m WHERE t.tipodeTarifa=:tipodeTarifa and t.description=:description and p.fechaDesdeVigencia=:fechaDesdeVigencia and m.centro=:centro")
+  public List<CentroTarifaEntity> searchCentrosAssinged(@Param("tipodeTarifa") String tipodeTarifa,
+      @Param("description") String description, @Param("fechaDesdeVigencia") BigDecimal fechaDesdeVigencia,
+      @Param("centro") BigInteger centro);
 
 }
