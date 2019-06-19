@@ -94,5 +94,9 @@ public interface CentrotarifamanagementRestService {
   @POST
   @Path("/centrotarifa/advance-search")
   public List<CustomParametroCentroEto> advancSearchCentrotarifa(CustomParametroCentroEto customParametroCentroEto);
+  
+  @POST
+  @Path("/centrotarifa/centros-search")
+  public List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto);
 
 }
