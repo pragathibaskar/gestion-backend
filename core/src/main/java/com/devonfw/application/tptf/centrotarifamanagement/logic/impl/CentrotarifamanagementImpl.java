@@ -82,5 +82,10 @@ public class CentrotarifamanagementImpl extends AbstractComponentFacade implemen
 
     return this.ucManageCentroTarifa.advancSearchCentrotarifa(customParametroCentroEto);
   }
+  @Override
+  public List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto) {
+
+    return this.ucManageCentroTarifa.searchCentrosAssinged(customParametroCentroEto);
+  }
 
 }
