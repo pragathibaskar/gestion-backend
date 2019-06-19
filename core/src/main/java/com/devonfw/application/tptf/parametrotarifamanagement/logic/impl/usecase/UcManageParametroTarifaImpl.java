@@ -122,6 +122,10 @@ public class UcManageParametroTarifaImpl extends AbstractParametroTarifaUc imple
     papametroEto.setTiempoMaxSalida(entityResult.getTiempoMaxSalida());
     papametroEto.setFechaModificacion(entityResult.getFechaModificacion());
     papametroEto.setNumberOfCentros(entityResult.getTipodeTarifa().getCentrotarifa().size());
+    entityResult.getTipodeTarifa().getCentrotarifa().forEach(centros -> {
+      papametroEto.setCentro(centros.getCentros().getCentro());
+
+    });
     customPapametroEtos.add(papametroEto);
   }
 }
