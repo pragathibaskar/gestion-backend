@@ -1,6 +1,7 @@
 package com.devonfw.application.tptf.general.logic.api.to;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import com.devonfw.application.tptf.general.common.api.BinaryObject;
 import com.devonfw.module.basic.common.api.to.AbstractEto;
@@ -42,12 +43,30 @@ public class CustomPapametroEto extends AbstractEto {
 
   private Integer numberOfCentros;
 
+  private BigInteger centro;
+
   /**
    * Constructor.
    */
   public CustomPapametroEto() {
 
     super();
+  }
+
+  /**
+   * @return centro
+   */
+  public BigInteger getCentro() {
+
+    return this.centro;
+  }
+
+  /**
+   * @param centro new value of {@link #getcentro}.
+   */
+  public void setCentro(BigInteger centro) {
+
+    this.centro = centro;
   }
 
   /**
