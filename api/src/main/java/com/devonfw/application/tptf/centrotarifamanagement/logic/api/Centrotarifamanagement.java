@@ -16,6 +16,8 @@ public interface Centrotarifamanagement extends UcFindCentroTarifa, UcManageCent
    * @return
    */
   List<CustomParametroCentroEto> advancSearchCentrotarifa(CustomParametroCentroEto customParametroCentroEto);
+  
+  List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto);
 
   /**
    * @param centrotarifa
