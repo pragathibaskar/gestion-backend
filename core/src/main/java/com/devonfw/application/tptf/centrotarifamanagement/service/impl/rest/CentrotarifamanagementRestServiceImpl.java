@@ -77,6 +77,13 @@ public class CentrotarifamanagementRestServiceImpl implements Centrotarifamanage
   public List<CustomParametroCentroEto> advancSearchCentrotarifa(CustomParametroCentroEto customParametroCentroEto) {
 
     return this.centrotarifamanagement.advancSearchCentrotarifa(customParametroCentroEto);
+    
+    
+  }
+  @Override
+  public List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto) {
+
+    return this.centrotarifamanagement.searchCentrosAssinged(customParametroCentroEto);
   }
 
 }
