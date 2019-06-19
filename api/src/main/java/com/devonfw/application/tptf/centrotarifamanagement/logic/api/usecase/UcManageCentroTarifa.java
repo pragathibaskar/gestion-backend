@@ -41,5 +41,7 @@ public interface UcManageCentroTarifa {
    * @return
    */
   List<CustomParametroCentroEto> advancSearchCentrotarifa(CustomParametroCentroEto customParametroCentroEto);
+  
+  List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto);
 
 }
