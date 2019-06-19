@@ -5,7 +5,8 @@ CREATE TABLE MUTITAT (
   tipodeTarifa          VARCHAR(1) not null ,
   description           VARCHAR(40),
   porDefecto            boolean not null default 0,
-  CONSTRAINT PK_MUTITAT PRIMARY KEY (id)
+  CONSTRAINT PK_MUTITAT PRIMARY KEY (id),
+  UNIQUE (tipodeTarifa)
 );
 
 --MUPGPT
