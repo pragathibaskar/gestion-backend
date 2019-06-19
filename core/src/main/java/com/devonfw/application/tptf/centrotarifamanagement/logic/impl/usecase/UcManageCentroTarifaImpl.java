@@ -106,4 +106,15 @@ public class UcManageCentroTarifaImpl extends AbstractCentroTarifaUc implements 
     });
     return centroEtos;
   }
+  
+  @Override
+  public List<CustomParametroCentroEto> searchCentrosAssinged(CustomParametroCentroEto customParametroCentroEto) {
+
+    List<CentroTarifaEntity> results = getCentroTarifaRepository().searchCentrosAssinged(
+        customParametroCentroEto.getTipodeTarifa(), customParametroCentroEto.getDescription(),
+        customParametroCentroEto.getFechaDesdeVigencia(), customParametroCentroEto.getCentro());
+    List<CustomParametroCentroEto> centroEtos = transferFromEntity(customParametroCentroEto, results);
+    LOG.debug("The centroTarifa '{}' has been fetched.", centroEtos);
+    return centroEtos;
+  }
 }
